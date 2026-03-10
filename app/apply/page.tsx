@@ -1,0 +1,73 @@
+import Navigation from "@/components/Navigation";
+import ApplyForm from "@/components/ApplyForm";
+
+export const metadata = {
+  title: "Apply Now - TailorTech",
+  description: "Apply for enrollment in TailorTech coding courses. Start your journey to becoming a professional developer.",
+};
+
+export default function ApplyPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Navigation />
+      <main className="pt-20">
+        {/* Header */}
+        <section className="py-12 md:py-16 bg-gradient-to-r from-[#00bfff]/10 to-[#e91e63]/10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Apply Now
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Take the first step towards your coding career. Fill out the form below and we'll get in touch with you.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Application Form */}
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-white rounded-lg shadow-lg p-8 md:p-12 border border-gray-200">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  Enrollment Application
+                </h2>
+                <p className="text-gray-600 mb-8">
+                  Please fill out the form below. After submission, you'll be redirected to WhatsApp
+                  where our team will assist you with the enrollment process.
+                </p>
+                <ApplyForm />
+              </div>
+
+              {/* Additional Info */}
+              <div className="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  What Happens Next?
+                </h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#00bfff]">✓</span>
+                    <span>You'll be redirected to WhatsApp with your application details</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#00bfff]">✓</span>
+                    <span>Our team will review your application and get back to you</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#00bfff]">✓</span>
+                    <span>We'll discuss course details, schedule, and answer any questions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#00bfff]">✓</span>
+                    <span>Complete enrollment and start your coding journey!</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}

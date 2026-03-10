@@ -5,6 +5,7 @@ export interface Course {
   duration: string;
   mode: "Live" | "Recorded";
   category: "Live Program" | "Recorded Course";
+  image?: string;
 }
 
 export interface Testimonial {
@@ -33,6 +34,7 @@ export const COURSES: Course[] = [
     duration: "3 months",
     mode: "Live",
     category: "Live Program",
+    image: "/courses/java-frontend.jpg",
   },
   {
     id: "java-backend",
@@ -42,6 +44,7 @@ export const COURSES: Course[] = [
     duration: "3 months",
     mode: "Live",
     category: "Live Program",
+    image: "/courses/java-backend.jpg",
   },
   {
     id: "java-fullstack",
@@ -51,6 +54,7 @@ export const COURSES: Course[] = [
     duration: "6 months",
     mode: "Live",
     category: "Live Program",
+    image: "/courses/java-fullstack.jpg",
   },
   {
     id: "data-engineering",
@@ -60,6 +64,7 @@ export const COURSES: Course[] = [
     duration: "4 months",
     mode: "Live",
     category: "Live Program",
+    image: "/courses/data-engineering.jpg",
   },
   {
     id: "java-fullstack-recorded",
@@ -69,6 +74,7 @@ export const COURSES: Course[] = [
     duration: "6 months",
     mode: "Recorded",
     category: "Recorded Course",
+    image: "/courses/java-fullstack-recorded.jpg",
   },
   {
     id: "backend-recorded",
@@ -78,6 +84,7 @@ export const COURSES: Course[] = [
     duration: "3 months",
     mode: "Recorded",
     category: "Recorded Course",
+    image: "/courses/backend-recorded.jpg",
   },
 ];
 
@@ -89,7 +96,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "TailorTech transformed my career! The practical approach and small batch size meant I got personalized attention. The instructors are industry experts who really care about your success.",
-    role: "Software Developer at TechCorp",
+    role: "Software Developer at Infosys",
   },
   {
     id: "2",
@@ -98,7 +105,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "The best investment I've made in my career. The course covers everything from fundamentals to advanced concepts. The live sessions and hands-on projects prepared me perfectly for real-world challenges.",
-    role: "Backend Engineer at StartupXYZ",
+    role: "Backend Engineer at TCS",
   },
   {
     id: "3",
@@ -107,7 +114,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "Excellent course structure and amazing support. The focus on industry tools and practical projects helped me land my dream job. Highly recommend TailorTech to anyone serious about coding!",
-    role: "Data Engineer at DataTech",
+    role: "Data Engineer at Wipro",
   },
   {
     id: "4",
@@ -116,7 +123,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "The small batch learning approach made all the difference. I could ask questions freely and get immediate feedback. The course materials are comprehensive and the instructors are always available to help.",
-    role: "Frontend Developer at WebSolutions",
+    role: "Frontend Developer at Accenture",
   },
   {
     id: "5",
@@ -125,7 +132,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "From zero coding experience to a full-stack developer - TailorTech made it possible! The step-by-step guidance and real-world projects gave me the confidence to apply for jobs.",
-    role: "Full Stack Developer at InnovateLabs",
+    role: "Full Stack Developer at Cognizant",
   },
   {
     id: "6",
@@ -134,7 +141,7 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "The personalized guidance and focus on fundamentals really helped me understand concepts deeply. The mock interviews and career support were invaluable in my job search.",
-    role: "Backend Developer at CloudSystems",
+    role: "Backend Developer at HCL Technologies",
   },
 ];
 
@@ -225,5 +232,5 @@ export const ABOUT_CONTENT = {
   },
 };
 
-// WhatsApp number - update this with actual number
-export const WHATSAPP_NUMBER = "1234567890"; // Replace with actual WhatsApp number
+// WhatsApp number
+export const WHATSAPP_NUMBER = "917340445010"; // +91 73404 45010

@@ -9,9 +9,7 @@ const NAV_LINKS = [
   { href: "/programs", label: "Programs" },
   { href: "/about", label: "About" },
   { href: "/testimonials", label: "Testimonials" },
-  { href: "/demo-videos", label: "Demo Videos" },
   { href: "/contact", label: "Contact" },
-  { href: "/apply", label: "Apply" },
 ];
 
 export default function Navigation() {
@@ -24,13 +22,13 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3  "
           >
             <Image
               src="/logo.png"
               alt="TailorTech Logo"
-              width={100}
-              height={100}
+              width={160}
+              height={160}
               className="rounded"
               priority
             />

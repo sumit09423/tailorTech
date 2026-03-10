@@ -1,16 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import { generateWhatsAppURL, formatMessage, validateEmail, validatePhone } from "@/lib/utils";
 import { WHATSAPP_NUMBER, COURSES } from "@/lib/constants";
 
 export default function ApplyForm() {
+  const searchParams = useSearchParams();
+  const courseFromUrl = searchParams.get("course") || "";
+
+  // Memoize live courses to prevent recreation on every render
+  const liveCourses = useMemo(() => COURSES.filter(c => c.category === "Live Program"), []);
+  const isValidCourse = courseFromUrl && liveCourses.some(c => c.title === courseFromUrl);
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    course: "",
+    course: isValidCourse ? courseFromUrl : "",
   });
+
+  // Update course when URL parameter changes
+  useEffect(() => {
+    if (courseFromUrl && liveCourses.some(c => c.title === courseFromUrl)) {
+      setFormData((prev) => {
+        // Only update if course actually changed
+        if (prev.course !== courseFromUrl) {
+          return { ...prev, course: courseFromUrl };
+        }
+        return prev;
+      });
+    }
+  }, [courseFromUrl, liveCourses]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 

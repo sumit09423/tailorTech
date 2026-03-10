@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import ApplyForm from "@/components/ApplyForm";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Apply Now - TailorTech",
@@ -37,7 +38,9 @@ export default function ApplyPage() {
                   Please fill out the form below. After submission, you'll be redirected to WhatsApp
                   where our team will assist you with the enrollment process.
                 </p>
-                <ApplyForm />
+                <Suspense fallback={<div className="text-center py-8">Loading form...</div>}>
+                  <ApplyForm />
+                </Suspense>
               </div>
 
               {/* Additional Info */}

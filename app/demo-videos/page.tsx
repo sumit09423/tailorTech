@@ -35,17 +35,17 @@ const DEMO_VIDEOS = [
 
 export default function DemoVideosPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#1a1a2e]">
       <Navigation />
       <main className="pt-20">
         {/* Header */}
-        <section className="py-12 md:py-16 bg-gradient-to-r from-[#00bfff]/10 to-[#e91e63]/10">
+        <section className="py-12 md:py-16 bg-gradient-to-r from-[#e91e63]/10 to-[#e91e63]/5">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Demo Videos
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Watch sample lectures and get a feel for our teaching style
               </p>
             </div>
@@ -53,12 +53,12 @@ export default function DemoVideosPage() {
         </section>
 
         {/* Videos Grid */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-[#1a1a2e]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {DEMO_VIDEOS.map((video) => (
-                <div key={video.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                  <div className="aspect-video bg-gray-200">
+                <div key={video.id} className="bg-[#1f1f3a] rounded-lg shadow-md overflow-hidden border border-gray-700">
+                  <div className="aspect-video bg-gray-800">
                     <iframe
                       className="w-full h-full"
                       src={`https://www.youtube.com/embed/${video.videoId}`}
@@ -68,10 +68,10 @@ export default function DemoVideosPage() {
                     ></iframe>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {video.title}
                     </h3>
-                    <p className="text-gray-600">{video.description}</p>
+                    <p className="text-gray-300">{video.description}</p>
                   </div>
                 </div>
               ))}

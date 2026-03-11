@@ -13,7 +13,7 @@ export default function MockInterviewButton() {
   return (
     <button
       onClick={handleClick}
-      className="px-8 py-4 bg-white text-[#e91e63] rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+      className="px-10 py-4 bg-[#e91e63] text-white rounded-lg font-semibold hover:bg-[#c2185b] transition-all shadow-lg hover:shadow-xl transform hover:scale-105 text-lg"
     >
       Book a Slot via WhatsApp
     </button>

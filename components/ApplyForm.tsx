@@ -81,7 +81,7 @@ export default function ApplyForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
           Name *
         </label>
         <input
@@ -90,16 +90,16 @@ export default function ApplyForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#00bfff] focus:border-transparent ${
-            errors.name ? "border-red-500" : "border-gray-300"
+          className={`w-full px-4 py-2 bg-[#1a1a2e] border rounded-lg focus:ring-2 focus:ring-[#e91e63] focus:border-transparent text-white placeholder-gray-500 ${
+            errors.name ? "border-red-500" : "border-gray-600"
           }`}
           placeholder="Your full name"
         />
-        {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
+        {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
           Email *
         </label>
         <input
@@ -108,16 +108,16 @@ export default function ApplyForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#00bfff] focus:border-transparent ${
-            errors.email ? "border-red-500" : "border-gray-300"
+          className={`w-full px-4 py-2 bg-[#1a1a2e] border rounded-lg focus:ring-2 focus:ring-[#e91e63] focus:border-transparent text-white placeholder-gray-500 ${
+            errors.email ? "border-red-500" : "border-gray-600"
           }`}
           placeholder="your.email@example.com"
         />
-        {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+        {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
           Phone *
         </label>
         <input
@@ -126,16 +126,16 @@ export default function ApplyForm() {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#00bfff] focus:border-transparent ${
-            errors.phone ? "border-red-500" : "border-gray-300"
+          className={`w-full px-4 py-2 bg-[#1a1a2e] border rounded-lg focus:ring-2 focus:ring-[#e91e63] focus:border-transparent text-white placeholder-gray-500 ${
+            errors.phone ? "border-red-500" : "border-gray-600"
           }`}
           placeholder="+1 234 567 8900"
         />
-        {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
+        {errors.phone && <p className="mt-1 text-sm text-red-400">{errors.phone}</p>}
       </div>
 
       <div>
-        <label htmlFor="course" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="course" className="block text-sm font-medium text-gray-300 mb-2">
           Course Interested In *
         </label>
         <select
@@ -143,18 +143,18 @@ export default function ApplyForm() {
           name="course"
           value={formData.course}
           onChange={handleChange}
-          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#00bfff] focus:border-transparent ${
-            errors.course ? "border-red-500" : "border-gray-300"
+          className={`w-full px-4 py-2 bg-[#1a1a2e] border rounded-lg focus:ring-2 focus:ring-[#e91e63] focus:border-transparent text-white ${
+            errors.course ? "border-red-500" : "border-gray-600"
           }`}
         >
           <option value="">Select a course</option>
           {COURSES.filter(c => c.category === "Live Program").map((course) => (
-            <option key={course.id} value={course.title}>
+            <option key={course.id} value={course.title} className="bg-[#1a1a2e]">
               {course.title} ({course.duration})
             </option>
           ))}
         </select>
-        {errors.course && <p className="mt-1 text-sm text-red-600">{errors.course}</p>}
+        {errors.course && <p className="mt-1 text-sm text-red-400">{errors.course}</p>}
       </div>
 
       <button

@@ -40,7 +40,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-[#00bfff] transition-colors font-medium"
+                className="text-white hover:text-[#e91e63] transition-colors font-medium"
               >
                 {link.label}
               </Link>
@@ -49,7 +49,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white hover:text-[#00bfff] transition-colors"
+            className="md:hidden text-white hover:text-[#e91e63] transition-colors"
             aria-label="Toggle menu"
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -94,7 +94,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white hover:text-[#00bfff] transition-colors font-medium"
+                  className="text-white hover:text-[#e91e63] transition-colors font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

@@ -6,13 +6,13 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+    <div className="bg-[#1f1f3a] rounded-lg shadow-md p-6 border border-gray-700">
       <div className="flex items-center gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
           <svg
             key={i}
             className={`w-5 h-5 ${
-              i < testimonial.rating ? "text-yellow-400" : "text-gray-300"
+              i < testimonial.rating ? "text-yellow-400" : "text-gray-600"
             }`}
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -21,13 +21,10 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           </svg>
         ))}
       </div>
-      <p className="text-gray-700 mb-4 italic">"{testimonial.testimonial}"</p>
-      <div className="border-t border-gray-200 pt-4">
-        <p className="font-semibold text-gray-900">{testimonial.name}</p>
-        <p className="text-sm text-gray-600">{testimonial.course}</p>
-        {testimonial.role && (
-          <p className="text-sm text-gray-500">{testimonial.role}</p>
-        )}
+      <p className="text-gray-300 mb-4 italic">"{testimonial.testimonial}"</p>
+      <div className="border-t border-gray-700 pt-4">
+        <p className="font-semibold text-white">{testimonial.name}</p>
+        <p className="text-sm text-gray-400">{testimonial.course}</p>
       </div>
     </div>
   );

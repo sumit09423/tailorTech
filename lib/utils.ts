@@ -21,6 +21,7 @@ I'm interested in learning more about your courses.
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
+${formData.program ? `Program Interested In: ${formData.program}` : ''}
 
 Message:
 ${formData.message}

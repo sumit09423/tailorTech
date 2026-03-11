@@ -30,8 +30,8 @@ export const COURSES: Course[] = [
     id: "java-frontend",
     title: "Java Frontend Development",
     description:
-      "Master modern frontend development with Java-based frameworks. Learn to build responsive, interactive web applications using the latest technologies and best practices.",
-    duration: "3 months",
+      "Learn how to build modern and responsive user interfaces using core frontend technologies and best development practices.",
+    duration: "75 hours",
     mode: "Live",
     category: "Live Program",
     image: "/courses/java-frontend.jpg",
@@ -40,8 +40,8 @@ export const COURSES: Course[] = [
     id: "java-backend",
     title: "Java Backend Development",
     description:
-      "Dive deep into server-side development with Java. Build robust, scalable backend systems, REST APIs, and learn enterprise-level Java development.",
-    duration: "3 months",
+      "Understand how backend systems power modern applications, including server-side logic, APIs, and database integration.",
+    duration: "90 hours",
     mode: "Live",
     category: "Live Program",
     image: "/courses/java-backend.jpg",
@@ -50,8 +50,8 @@ export const COURSES: Course[] = [
     id: "java-fullstack",
     title: "Java Full Stack Development",
     description:
-      "Complete full-stack development course covering both frontend and backend technologies. Build end-to-end applications from scratch.",
-    duration: "6 months",
+      "A complete program covering both frontend and backend development, helping learners build full web applications from scratch with real time projects and mock interviews.",
+    duration: "175 hours",
     mode: "Live",
     category: "Live Program",
     image: "/courses/java-fullstack.jpg",
@@ -60,8 +60,8 @@ export const COURSES: Course[] = [
     id: "data-engineering",
     title: "Data Engineering",
     description:
-      "Learn to design and build data pipelines, work with big data technologies, and master data engineering tools used in the industry.",
-    duration: "4 months",
+      "Learn how modern data platforms and pipelines are built to process and manage large datasets for real-world applications.",
+    duration: "120 hours",
     mode: "Live",
     category: "Live Program",
     image: "/courses/data-engineering.jpg",
@@ -70,21 +70,11 @@ export const COURSES: Course[] = [
     id: "java-fullstack-recorded",
     title: "Java Full Stack Development (Recorded)",
     description:
-      "Self-paced recorded course covering full-stack Java development. Learn at your own pace with lifetime access to all course materials.",
-    duration: "6 months",
+      "A self-paced recorded program designed for learners who prefer flexible learning. Build a strong understanding of both frontend and backend development through structured lectures and practical exercises.",
+    duration: "Self-Paced",
     mode: "Recorded",
     category: "Recorded Course",
     image: "/courses/java-fullstack-recorded.jpg",
-  },
-  {
-    id: "backend-recorded",
-    title: "Backend Development (Recorded)",
-    description:
-      "Self-paced recorded course on backend development. Perfect for those who want to learn server-side development on their own schedule.",
-    duration: "3 months",
-    mode: "Recorded",
-    category: "Recorded Course",
-    image: "/courses/backend-recorded.jpg",
   },
 ];
 
@@ -96,7 +86,6 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "TailorTech transformed my career! The practical approach and small batch size meant I got personalized attention. The instructors are industry experts who really care about your success.",
-    role: "Software Developer at Infosys",
   },
   {
     id: "2",
@@ -105,7 +94,6 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "The best investment I've made in my career. The course covers everything from fundamentals to advanced concepts. The live sessions and hands-on projects prepared me perfectly for real-world challenges.",
-    role: "Backend Engineer at TCS",
   },
   {
     id: "3",
@@ -114,7 +102,6 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "Excellent course structure and amazing support. The focus on industry tools and practical projects helped me land my dream job. Highly recommend TailorTech to anyone serious about coding!",
-    role: "Data Engineer at Wipro",
   },
   {
     id: "4",
@@ -123,7 +110,6 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "The small batch learning approach made all the difference. I could ask questions freely and get immediate feedback. The course materials are comprehensive and the instructors are always available to help.",
-    role: "Frontend Developer at Accenture",
   },
   {
     id: "5",
@@ -132,7 +118,6 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "From zero coding experience to a full-stack developer - TailorTech made it possible! The step-by-step guidance and real-world projects gave me the confidence to apply for jobs.",
-    role: "Full Stack Developer at Cognizant",
   },
   {
     id: "6",
@@ -141,94 +126,95 @@ export const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     testimonial:
       "The personalized guidance and focus on fundamentals really helped me understand concepts deeply. The mock interviews and career support were invaluable in my job search.",
-    role: "Backend Developer at HCL Technologies",
   },
 ];
 
 export const UPCOMING_BATCHES: Batch[] = [
   {
     id: "1",
-    courseName: "Java Full Stack Development",
-    startDate: "2026-04-01",
-    endDate: "2026-09-30",
-    seatsAvailable: 15,
+    courseName: "Data Engineering",
+    startDate: "2026-04-10",
+    endDate: "2026-08-10",
+    seatsAvailable: 17,
   },
   {
     id: "2",
-    courseName: "Java Backend Development",
-    startDate: "2026-04-15",
-    endDate: "2026-07-15",
-    seatsAvailable: 12,
-  },
-  {
-    id: "3",
-    courseName: "Java Frontend Development",
+    courseName: "Java Full Stack Development",
     startDate: "2026-05-01",
-    endDate: "2026-07-31",
-    seatsAvailable: 10,
-  },
-  {
-    id: "4",
-    courseName: "Data Engineering",
-    startDate: "2026-05-15",
-    endDate: "2026-09-15",
-    seatsAvailable: 8,
+    endDate: "2026-10-31",
+    seatsAvailable: 20,
   },
 ];
 
 export const WHY_TAILORTECH = [
   {
-    title: "Small Live Batches",
+    title: "Practical Learning Approach",
     description:
-      "Limited seats ensure personalized attention and better learning outcomes.",
-    icon: "👥",
-  },
-  {
-    title: "Practical Learning",
-    description:
-      "Hands-on projects and real-world applications, not just theory.",
+      "Focus on real-world skills through hands-on projects and practical assignments.",
     icon: "💻",
   },
   {
-    title: "Industry Tools",
+    title: "Small Live Batches",
     description:
-      "Learn the tools and technologies actually used in the industry.",
+      "Interactive learning with personalized attention and mentorship.",
+    icon: "👥",
+  },
+  {
+    title: "Industry-Focused Training",
+    description:
+      "Programs designed around tools and practices used in modern software teams.",
     icon: "🛠️",
   },
   {
-    title: "Personalized Guidance",
+    title: "Tailor-Made Skill Development",
     description:
-      "Get individual attention and mentorship from experienced instructors.",
+      "Learning paths designed to help each student grow at their own pace.",
     icon: "🎯",
   },
   {
-    title: "Focus on Fundamentals",
+    title: "Career-Oriented Learning",
     description:
-      "Strong foundation in core concepts that last throughout your career.",
+      "Guidance and preparation focused on building confidence for real tech careers.",
     icon: "📚",
   },
 ];
 
 export const ABOUT_CONTENT = {
-  whyStarted: {
-    title: "Why TailorTech Started",
+  intro: {
+    title: "About TailorTech",
     content:
-      "TailorTech was born from a simple observation: traditional coding bootcamps and online courses often leave students unprepared for real-world challenges. We noticed that students were learning syntax but not understanding how to solve problems, building projects but not understanding the fundamentals, and graduating without the confidence to tackle industry challenges. We set out to create a learning experience that bridges this gap.",
+      "TailorTech is a learning initiative focused on building practical, industry-ready technology skills through thoughtful and structured learning experiences. The idea behind TailorTech comes from a simple belief — learning technology should not be generic. Every learner has a different background, pace, and career goal. At TailorTech, programs are designed with the philosophy that skills should be built carefully, practically, and in a way that truly prepares someone for real-world software development. Our programs focus on practical learning, real-world projects, and strong fundamentals rather than just theoretical content. Through live online sessions, personalized guidance, and self-paced learning options, TailorTech aims to create an environment where learners can develop confidence in building real software systems.",
   },
   philosophy: {
     title: "Our Philosophy",
     content:
-      "We believe that coding is a craft that requires deep understanding, not just memorization. Our philosophy centers on three core principles: understanding fundamentals deeply, learning through building, and receiving personalized guidance. We don't just teach you how to code - we teach you how to think like a developer.",
+      "At TailorTech, we believe that strong careers in technology are built on clear fundamentals, practical understanding, and continuous learning. Instead of overwhelming learners with excessive information, our programs focus on helping students understand concepts deeply and apply them in real-world scenarios. This philosophy is reflected in everything we do — from curriculum design to teaching approach.",
   },
-  practicalLearning: {
-    title: "Focus on Practical Learning",
-    content:
-      "Every concept you learn is immediately applied in real-world projects. We don't believe in learning in isolation. From day one, you'll be building applications that solve actual problems. Our curriculum is designed around projects, not lectures. You'll work on portfolio-worthy projects that demonstrate your skills to potential employers.",
+  focus: {
+    title: "Our Focus",
+    points: [
+      {
+        title: "Practical",
+        description: "Programs are designed around real-world tools, projects, and development practices.",
+      },
+      {
+        title: "Structured",
+        description: "Learners follow a clear roadmap that builds skills step by step.",
+      },
+      {
+        title: "Focused",
+        description: "Small live batches allow for better interaction and personalized attention.",
+      },
+      {
+        title: "Career-Oriented",
+        description: "Programs are aligned with real industry expectations and interview preparation.",
+      },
+    ],
   },
-  smallBatchApproach: {
-    title: "Small Live Batch Learning Approach",
+  learningApproach: {
+    title: "Our Learning Approach",
     content:
-      "We intentionally keep our batches small (typically 10-15 students) because we believe that quality learning happens when instructors can give individual attention. In our small batches, every question gets answered, every code review is thorough, and every student gets the support they need. This approach ensures that no one gets left behind and everyone reaches their full potential.",
+      "We emphasize small, focused learning environments where learners can ask questions, receive feedback, and build confidence while working on real projects. Whether someone is starting their journey in technology or looking to strengthen existing skills, TailorTech provides a learning environment designed to help them grow thoughtfully and build skills that truly matter.",
   },
 };
 

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a2e;
+  --background: #1a1a2e;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -10,7 +10,6 @@
   --color-foreground: var(--foreground);
   --color-dark-bg: #1a1a2e;
   --color-magenta-accent: #e91e63;
-  --color-cyan-accent: #00bfff;
   --font-sans: var(--font-roboto);
 }
 
@@ -23,22 +22,23 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed navigation */
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1a1a2e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #2c2c44;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #3c3c54;
 }

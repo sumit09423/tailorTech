@@ -34,7 +34,7 @@ export const COURSES: Course[] = [
     duration: "75 hours",
     mode: "Live",
     category: "Live Program",
-    image: "/courses/java-frontend.jpg",
+    image: "/FrontendDevelopment.png",
   },
   {
     id: "java-backend",
@@ -44,7 +44,7 @@ export const COURSES: Course[] = [
     duration: "90 hours",
     mode: "Live",
     category: "Live Program",
-    image: "/courses/java-backend.jpg",
+    image: "/JavaBackendDevelopment.png",
   },
   {
     id: "java-fullstack",
@@ -54,7 +54,7 @@ export const COURSES: Course[] = [
     duration: "175 hours",
     mode: "Live",
     category: "Live Program",
-    image: "/courses/java-fullstack.jpg",
+    image: "/javaFullStackDevloper.png",
   },
   {
     id: "data-engineering",
@@ -64,7 +64,7 @@ export const COURSES: Course[] = [
     duration: "120 hours",
     mode: "Live",
     category: "Live Program",
-    image: "/courses/data-engineering.jpg",
+    image: "/DataEngineeringMasterProgram.png",
   },
   {
     id: "java-fullstack-recorded",
@@ -74,7 +74,7 @@ export const COURSES: Course[] = [
     duration: "Self-Paced",
     mode: "Recorded",
     category: "Recorded Course",
-    image: "/courses/java-fullstack-recorded.jpg",
+    image: "/JavaFullStackDevelopment(Recorded Program).png",
   },
 ];
 

@@ -10,13 +10,43 @@
   --color-foreground: var(--foreground);
   --color-dark-bg: #1a1a2e;
   --color-magenta-accent: #e91e63;
-  --font-sans: var(--font-roboto);
+  --font-heading: var(--font-montserrat);
+  --font-subheading: var(--font-montserrat);
+  --font-body: var(--font-poppins);
+  --font-sans: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+/* Main headings: Montserrat Bold */
+h1, h2 {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Sub headings: Montserrat Medium */
+h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.font-heading {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.font-subheading {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.font-body {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 400;
 }
 
 /* Smooth scrolling */

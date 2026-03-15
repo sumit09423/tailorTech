@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
+const montserrat = Montserrat({
+  weight: ["500", "700"],
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-montserrat",
+});
+
+const poppins = Poppins({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -69,7 +76,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>{children}</body>
+      <body className={`${montserrat.variable} ${poppins.variable} antialiased font-body`}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

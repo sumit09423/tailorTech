@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import { generateWhatsAppURL } from "@/lib/utils";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 
@@ -37,11 +36,24 @@ export default function ProgramCard({
   const [showDetails, setShowDetails] = useState(false);
   const [imageError, setImageError] = useState(false);
 
+  // Preload image to check if it loads successfully
+  useEffect(() => {
+    if (image) {
+      const img = new Image();
+      img.onload = () => setImageError(false);
+      img.onerror = () => setImageError(true);
+      img.src = image;
+    }
+  }, [image]);
+
   const handleApply = () => {
     const message = `Hello TailorTech, I'm interested in applying for ${title}.`;
     const url = generateWhatsAppURL(WHATSAPP_NUMBER, message);
     window.open(url, "_blank");
   };
+
+  // Encode image URL to handle special characters like parentheses
+  const encodedImageUrl = image ? image.replace(/\(/g, '%28').replace(/\)/g, '%29') : '';
 
   return (
     <>
@@ -49,15 +61,13 @@ export default function ProgramCard({
       <div className="bg-[#1f1f3a] rounded-lg shadow-md hover:shadow-xl transition-shadow border border-gray-700 overflow-hidden h-full flex flex-col">
         {/* Course Image */}
         {image && !imageError && (
-          <div className="relative w-full h-48 bg-gradient-to-br from-[#e91e63]/20 to-[#e91e63]/10">
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              onError={() => setImageError(true)}
-            />
+          <div 
+            className="relative w-full h-56 bg-gradient-to-br from-[#e91e63]/20 to-[#e91e63]/10 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url("${encodedImageUrl}")`,
+            }}
+          >
+            <div className="absolute inset-0 bg-black/20"></div>
           </div>
         )}
         {(!image || imageError) && (

@@ -89,7 +89,7 @@ export default function ProgramsPage() {
                   title="Java Full Stack Developer Program"
                   duration="175 Hours"
                   mode="Live Online"
-                  image="/courses/java-fullstack.jpg"
+                  image="/javaFullStackDevloper.png"
                   description="The Java Full Stack Developer Program at TailorTech is designed to help learners become job-ready software developers with strong fundamentals and real-world project experience."
                   longDescription="This program takes learners from core programming concepts to building complete enterprise-level applications, following an industry-focused learning path aligned with modern software development practices. Through structured live sessions, hands-on assignments, and real-world projects, participants gain practical exposure to the tools and technologies used in modern full stack development."
                   whatCovers={[
@@ -120,7 +120,7 @@ export default function ProgramsPage() {
                   title="Frontend Development – Module 1"
                   duration="75+ Hours"
                   mode="Live Online"
-                  image="/courses/java-frontend.jpg"
+                  image="/FrontendDevelopment.png"
                   description="The Frontend Development program at TailorTech is designed to help learners build a strong foundation in modern web development. This module focuses on creating responsive, interactive web interfaces while understanding the core concepts that power modern frontend applications."
                   longDescription="Through structured live sessions and hands-on project work, learners gain practical experience with essential frontend technologies and development practices."
                   whatCovers={[
@@ -148,7 +148,7 @@ export default function ProgramsPage() {
                   title="Backend Development Program"
                   duration="90+ Hours"
                   mode="Live Online"
-                  image="/courses/java-backend.jpg"
+                  image="/JavaBackendDevelopment.png"
                   description="The Backend Development program at TailorTech is designed to help learners build strong server-side development skills and prepare for backend-focused software engineering roles."
                   longDescription="This program focuses on the core technologies and concepts used to build scalable backend systems, APIs, and data-driven applications. Through structured live sessions and hands-on projects, learners gain practical experience in building and managing backend services used in real-world applications."
                   whatCovers={[
@@ -178,7 +178,7 @@ export default function ProgramsPage() {
                   title="Data Engineering Master Program"
                   duration="120 Hours"
                   mode="Live Online"
-                  image="/courses/data-engineering.jpg"
+                  image="/DataEngineeringMasterProgram.png"
                   description="The Data Engineering program at TailorTech is designed to help learners build strong foundations and practical skills required to work as a Data Engineer."
                   longDescription="This program covers the core concepts of data engineering, modern data processing tools, and cloud-based data systems through structured learning and hands-on projects."
                   whatCovers={[
@@ -220,7 +220,7 @@ export default function ProgramsPage() {
                 title="Java Full Stack Development (Recorded Program)"
                 duration="Self-Paced"
                 mode="Recorded Program"
-                image="/courses/java-fullstack-recorded.jpg"
+                image="/JavaFullStackDevelopment(Recorded Program).png"
                 description="The Java Full Stack Development Recorded Program at TailorTech is designed for learners who prefer flexible, self-paced learning while building strong full stack development skills."
                 longDescription="This program covers both frontend and backend development, helping learners understand how modern web applications are built from end to end. Through structured recorded sessions and practical exercises, participants can learn at their own pace while building a solid foundation in full stack development."
                 whatCovers={[

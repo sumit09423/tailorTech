@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Course } from "@/lib/constants";
 import { useState } from "react";
 
@@ -17,19 +16,17 @@ export default function CourseCard({ course, buttonText = "View Details" }: Cour
     <div className="bg-[#1f1f3a] rounded-lg shadow-md hover:shadow-xl transition-shadow border border-gray-700 overflow-hidden">
       {/* Course Image */}
       {course.image && !imageError && (
-        <div className="relative w-full h-48 bg-gradient-to-br from-[#e91e63]/20 to-[#e91e63]/10">
-          <Image
-            src={course.image}
-            alt={course.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            onError={() => setImageError(true)}
-          />
+        <div 
+          className="relative w-full h-56 bg-gradient-to-br from-[#e91e63]/20 to-[#e91e63]/10 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${course.image})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/20"></div>
         </div>
       )}
       {course.image && imageError && (
-        <div className="w-full h-48 bg-gradient-to-br from-[#e91e63]/20 to-[#e91e63]/10 flex items-center justify-center">
+        <div className="w-full h-56 bg-gradient-to-br from-[#e91e63]/20 to-[#e91e63]/10 flex items-center justify-center">
           <div className="text-center">
             <svg className="w-16 h-16 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />

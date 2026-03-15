@@ -28,7 +28,7 @@ export default function Home() {
                 At TailorTech, we offer carefully designed programs focused on building strong fundamentals, practical skills, and real-world project experience in modern software technologies.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {liveCourses.map((course) => (
                 <CourseCard key={course.id} course={course} />
               ))}

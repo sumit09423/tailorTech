@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap");
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Mulish", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+input,
+select,
+textarea {
+  font-family: "Mulish", sans-serif;
+}
+
+.mob-ov {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.mob-ov.on {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mob-dr {
+  position: fixed;
+  top: 0;
+  right: -290px;
+  width: 270px;
+  height: 100vh;
+  background: #fff;
+  z-index: 999;
+  padding: 4.5rem 1.8rem 2rem;
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  overflow-y: auto;
+}
+
+.mob-dr.on {
+  right: 0;
+}
+
+.mob-dr a {
+  display: block;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e2a3a;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.mob-cta-b {
+  margin-top: 0.8rem;
+  background: #7bae8e;
+  color: #fff !important;
+  text-align: center;
+  padding: 0.9rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Mulish", sans-serif;
+}
+
+.mob-x {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #1e2a3a;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.tt-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+  background: #fff;
+  font-family: "Mulish", sans-serif;
+}
+
+.tt-input:focus {
+  border-color: #7bae8e;
+}
+
+.tt-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e2a3a;
+  margin-bottom: 0.35rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e2a3a;
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeUp 0.4s ease-out;
+}

@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import ProgramCard from "@/components/ProgramCard";
 import MockInterviewButton from "@/components/MockInterviewButton";
@@ -9,20 +10,20 @@ export const metadata = {
 
 export default function ProgramsPage() {
   return (
-    <div className="min-h-screen bg-[#1a1a2e]">
+    <div className="min-h-screen bg-[#FFFDFB] text-[#2C3E50]">
       <Navigation />
       <main className="pt-20">
         {/* Header */}
-        <section className="py-16 md:py-20 bg-gradient-to-r from-[#e91e63]/10 to-[#e91e63]/5">
+        <section className="py-16 md:py-20 bg-[#FFF8F0]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1E2A3A] mb-6">
                 Our Programs
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-4 leading-relaxed">
+              <p className="text-xl md:text-2xl text-[#6B7C8F] mb-4 leading-relaxed">
                 Comprehensive coding courses designed to transform your career
               </p>
-              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              <p className="text-lg text-[#6B7C8F] max-w-2xl mx-auto">
                 Choose from live programs, recorded courses, or enhance your interview skills with our mock interview sessions.
               </p>
             </div>
@@ -31,37 +32,37 @@ export default function ProgramsPage() {
             <div className="mt-12 flex flex-wrap justify-center gap-4">
               <a
                 href="#java-fullstack"
-                className="px-6 py-2 bg-[#e91e63]/20 text-white rounded-full hover:bg-[#e91e63]/30 transition-colors border border-[#e91e63]/30"
+                className="rounded-full border-2 border-[#7BAE8E]/35 bg-[#E8F3EC] px-5 py-2 text-sm font-bold text-[#5A8A6C] transition hover:bg-[#E8F3EC]/80"
               >
                 Full Stack
               </a>
               <a
                 href="#java-frontend"
-                className="px-6 py-2 bg-[#e91e63]/20 text-white rounded-full hover:bg-[#e91e63]/30 transition-colors border border-[#e91e63]/30"
+                className="rounded-full border-2 border-[#7BAE8E]/35 bg-[#E8F3EC] px-5 py-2 text-sm font-bold text-[#5A8A6C] transition hover:bg-[#E8F3EC]/80"
               >
                 Frontend
               </a>
               <a
                 href="#java-backend"
-                className="px-6 py-2 bg-[#e91e63]/20 text-white rounded-full hover:bg-[#e91e63]/30 transition-colors border border-[#e91e63]/30"
+                className="rounded-full border-2 border-[#7BAE8E]/35 bg-[#E8F3EC] px-5 py-2 text-sm font-bold text-[#5A8A6C] transition hover:bg-[#E8F3EC]/80"
               >
                 Backend
               </a>
               <a
                 href="#data-engineering"
-                className="px-6 py-2 bg-[#e91e63]/20 text-white rounded-full hover:bg-[#e91e63]/30 transition-colors border border-[#e91e63]/30"
+                className="rounded-full border-2 border-[#7BAE8E]/35 bg-[#E8F3EC] px-5 py-2 text-sm font-bold text-[#5A8A6C] transition hover:bg-[#E8F3EC]/80"
               >
                 Data Engineering
               </a>
               <a
                 href="#recorded-courses"
-                className="px-6 py-2 bg-[#e91e63]/20 text-white rounded-full hover:bg-[#e91e63]/30 transition-colors border border-[#e91e63]/30"
+                className="rounded-full border-2 border-[#7BAE8E]/35 bg-[#E8F3EC] px-5 py-2 text-sm font-bold text-[#5A8A6C] transition hover:bg-[#E8F3EC]/80"
               >
                 Recorded Courses
               </a>
               <a
                 href="#mock-interviews"
-                className="px-6 py-2 bg-[#e91e63]/20 text-white rounded-full hover:bg-[#e91e63]/30 transition-colors border border-[#e91e63]/30"
+                className="rounded-full border-2 border-[#7BAE8E]/35 bg-[#E8F3EC] px-5 py-2 text-sm font-bold text-[#5A8A6C] transition hover:bg-[#E8F3EC]/80"
               >
                 Mock Interviews
               </a>
@@ -70,13 +71,13 @@ export default function ProgramsPage() {
         </section>
 
         {/* Live Programs Section */}
-        <section className="py-12 md:py-16 bg-[#1a1a2e]">
+        <section className="py-12 md:py-16 bg-[#FFFDFB]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1E2A3A] mb-3">
                 Live Programs
               </h2>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              <p className="text-lg text-[#6B7C8F] max-w-2xl mx-auto">
                 Join small live batches with personalized guidance and real-time interaction
               </p>
             </div>
@@ -201,16 +202,16 @@ export default function ProgramsPage() {
         </section>
 
         {/* Recorded Courses */}
-        <section id="recorded-courses" className="py-12 md:py-16 bg-[#1a1a2e]">
+        <section id="recorded-courses" className="py-12 md:py-16 bg-[#FFFDFB]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1E2A3A] mb-4">
                 Recorded Courses
               </h2>
-              <p className="text-lg text-gray-300 mb-2 max-w-2xl mx-auto">
+              <p className="text-lg text-[#6B7C8F] mb-2 max-w-2xl mx-auto">
                 Self-paced recorded programs - learn at your own speed
               </p>
-              <p className="text-sm text-gray-400 italic">
+              <p className="text-sm text-[#6B7C8F] italic">
                 Perfect for those who prefer flexible learning schedules
               </p>
             </div>
@@ -242,25 +243,25 @@ export default function ProgramsPage() {
         </section>
 
         {/* Mock Interviews */}
-        <section id="mock-interviews" className="py-12 md:py-16 bg-[#1f1f3a]">
+        <section id="mock-interviews" className="bg-[#FFF8F0] py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-[#1a1a2e] rounded-xl shadow-2xl border border-gray-700 p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <div className="mx-auto max-w-4xl">
+              <div className="rounded-2xl border border-black/[0.05] bg-white p-8 shadow-lg md:p-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#1E2A3A] mb-2">
                   Mock Interview Sessions
                 </h2>
-                <p className="text-lg text-gray-300 mb-6">
+                <p className="text-lg text-[#6B7C8F] mb-6">
                   1 Hour per Session | Live Online
                 </p>
-                <p className="text-lg text-gray-200 mb-6 leading-relaxed">
+                <p className="text-lg text-[#2C3E50] mb-6 leading-relaxed">
                   TailorTech Mock Interview Sessions are designed to help learners prepare confidently for technical interviews. These one-on-one sessions simulate real interview environments and provide valuable feedback to improve problem-solving, technical understanding, and communication.
                 </p>
-                <p className="text-gray-300 mb-8 leading-relaxed">
+                <p className="text-[#6B7C8F] mb-8 leading-relaxed">
                   Each session is conducted by an industry professional who evaluates your approach and provides detailed feedback to help you perform better in real interviews.
                 </p>
 
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-4">What the Session Includes</h3>
+                  <h3 className="text-2xl font-bold text-[#1E2A3A] mb-4">What the Session Includes</h3>
                   <ul className="space-y-2">
                     {[
                       "One-on-one mock interview with an industry expert",
@@ -269,8 +270,8 @@ export default function ProgramsPage() {
                       "Feedback on technical concepts and coding style",
                       "Guidance on improving interview performance",
                     ].map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-gray-300">
-                        <span className="text-[#e91e63] mt-1">•</span>
+                      <li key={index} className="flex items-start gap-2 text-[#6B7C8F]">
+                        <span className="mt-1 font-bold text-[#7BAE8E]">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -278,15 +279,15 @@ export default function ProgramsPage() {
                 </div>
 
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-4">Who It Is For</h3>
+                  <h3 className="text-2xl font-bold text-[#1E2A3A] mb-4">Who It Is For</h3>
                   <ul className="space-y-2">
                     {[
                       "Students preparing for technical interviews",
                       "Developers looking to improve interview performance",
                       "Professionals preparing for backend, full stack, or data engineering roles",
                     ].map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-gray-300">
-                        <span className="text-[#e91e63] mt-1">•</span>
+                      <li key={index} className="flex items-start gap-2 text-[#6B7C8F]">
+                        <span className="mt-1 font-bold text-[#7BAE8E]">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -294,19 +295,19 @@ export default function ProgramsPage() {
                 </div>
 
                 <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-4">Session Details</h3>
-                  <div className="bg-[#1f1f3a] p-4 rounded-lg">
-                    <p className="text-gray-300">
+                  <h3 className="text-2xl font-bold text-[#1E2A3A] mb-4">Session Details</h3>
+                  <div className="bg-white border border-black/[0.05] shadow-sm p-4 rounded-lg">
+                    <p className="text-[#6B7C8F]">
                       <span className="font-semibold">Duration:</span> 1 Hour per session
                     </p>
-                    <p className="text-gray-300">
+                    <p className="text-[#6B7C8F]">
                       <span className="font-semibold">Mode:</span> Live Online (One-on-One)
                     </p>
                   </div>
                 </div>
 
-                <div className="text-center pt-6 border-t border-gray-700">
-                  <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                <div className="border-t border-black/[0.06] pt-6 text-center">
+                  <p className="text-lg text-[#6B7C8F] mb-6 leading-relaxed">
                     Prepare with confidence and gain valuable insights before your real interviews.
                   </p>
                   <MockInterviewButton />
@@ -317,25 +318,30 @@ export default function ProgramsPage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-16 md:py-20 bg-gradient-to-r from-[#e91e63] to-[#c2185b]">
+        <section
+          className="py-16 md:py-20"
+          style={{
+            background: "linear-gradient(135deg, #7BAE8E, #5A8A6C)",
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
                 Ready to Start Your Coding Journey?
               </h2>
-              <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              <p className="mb-8 text-xl leading-relaxed text-white/90">
                 Join TailorTech and transform your career with hands-on learning, real-world projects, and personalized guidance.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
                 <a
                   href="/apply"
-                  className="px-8 py-4 bg-white text-[#e91e63] rounded-lg font-semibold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="rounded-full bg-white px-8 py-3.5 text-sm font-bold text-[#5A8A6C] shadow-md transition hover:bg-white/95"
                 >
                   Apply Now
                 </a>
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all"
+                  className="rounded-full border-2 border-white/40 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Contact Us
                 </a>
@@ -344,6 +350,7 @@ export default function ProgramsPage() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,9 +1,10 @@
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import CourseCard from "@/components/CourseCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import BatchCard from "@/components/BatchCard";
-import Link from "next/link";
 import { COURSES, TESTIMONIALS, UPCOMING_BATCHES, WHY_TAILORTECH } from "@/lib/constants";
 
 export default function Home() {
@@ -11,24 +12,24 @@ export default function Home() {
   const featuredTestimonials = TESTIMONIALS.slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-[#1a1a2e]">
+    <div className="min-h-screen bg-[#FFFDFB] text-[#2C3E50]">
       <Navigation />
       <main className="pt-20">
-        {/* Hero Section */}
         <Hero />
 
-        {/* What We Offer Section */}
-        <section id="what-we-offer" className="py-16 md:py-24 bg-[#1f1f3a]">
+        <section id="what-we-offer" className="bg-[#FFF8F0] py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-normal text-[#1E2A3A] md:text-4xl">
                 What We Offer
               </h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                At TailorTech, we offer carefully designed programs focused on building strong fundamentals, practical skills, and real-world project experience in modern software technologies.
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#6B7C8F]">
+                At TailorTech, we offer carefully designed programs focused on building strong
+                fundamentals, practical skills, and real-world project experience in modern software
+                technologies.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {liveCourses.map((course) => (
                 <CourseCard key={course.id} course={course} />
               ))}
@@ -36,43 +37,39 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why TailorTech Section */}
-        <section id="why-tailortech" className="py-16 md:py-24 bg-[#1a1a2e]">
+        <section id="why-tailortech" className="bg-[#FFFDFB] py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-normal text-[#1E2A3A] md:text-4xl">
                 Why TailorTech
               </h2>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                We're committed to your success with a learning approach that works
+              <p className="mx-auto max-w-2xl text-lg text-[#6B7C8F]">
+                We&apos;re committed to your success with a learning approach that works
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {WHY_TAILORTECH.map((feature, index) => (
-                <div key={index} className="text-center p-6">
-                  <div className="text-5xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                <div key={index} className="rounded-2xl border border-black/[0.05] bg-white p-6 text-center shadow-sm">
+                  <div className="mb-4 text-5xl">{feature.icon}</div>
+                  <h3 className="mb-2 text-lg font-semibold text-[#1E2A3A]">{feature.title}</h3>
+                  <p className="text-[#6B7C8F]">{feature.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Student Feedback Section */}
-        <section id="testimonials" className="py-16 md:py-24 bg-[#1f1f3a]">
+        <section id="testimonials" className="bg-[#FFF8F0] py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-normal text-[#1E2A3A] md:text-4xl">
                 Student Feedback
               </h2>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              <p className="mx-auto max-w-2xl text-lg text-[#6B7C8F]">
                 Hear from our students who have transformed their careers
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="mx-auto mb-8 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2">
               {featuredTestimonials.map((testimonial) => (
                 <TestimonialCard key={testimonial.id} testimonial={testimonial} />
               ))}
@@ -80,7 +77,7 @@ export default function Home() {
             <div className="text-center">
               <Link
                 href="/testimonials"
-                className="inline-block px-6 py-3 bg-[#e91e63] text-white rounded-lg font-semibold hover:bg-[#c2185b] transition-colors"
+                className="inline-block rounded-full bg-[#7BAE8E] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#5A8A6C]"
               >
                 View All Testimonials
               </Link>
@@ -88,18 +85,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Upcoming Batches Section */}
-        <section id="upcoming-batches" className="py-16 md:py-24 bg-[#1a1a2e]">
+        <section id="upcoming-batches" className="bg-[#FFFDFB] py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-normal text-[#1E2A3A] md:text-4xl">
                 Upcoming Batches
               </h2>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                Start your learning journey with TailorTech. Explore the upcoming live programs and secure your seat in the next batch.
+              <p className="mx-auto max-w-2xl text-lg text-[#6B7C8F]">
+                Start your learning journey with TailorTech. Explore the upcoming live programs and
+                secure your seat in the next batch.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {UPCOMING_BATCHES.map((batch) => (
                 <BatchCard key={batch.id} batch={batch} />
               ))}
@@ -107,19 +104,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section id="cta" className="py-16 md:py-24 bg-gradient-to-r from-[#e91e63] to-[#c2185b]">
+        <section
+          id="cta"
+          className="py-16 md:py-24"
+          style={{
+            background: "linear-gradient(135deg, #7BAE8E, #5A8A6C)",
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="mb-6 text-3xl font-normal text-white md:text-4xl">
                 Start Building Skills That Are Truly Tailor-Made.
               </h2>
-              <p className="text-xl text-white/90 mb-8">
-                Join TailorTech and learn through practical projects, small live batches, and focused mentorship designed to help you grow in the software industry.
+              <p className="mb-8 text-xl leading-relaxed text-white/90">
+                Join TailorTech and learn through practical projects, small live batches, and focused
+                mentorship designed to help you grow in the software industry.
               </p>
               <Link
                 href="/apply"
-                className="inline-block px-8 py-4 bg-white text-[#e91e63] rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+                className="inline-block rounded-full bg-white px-8 py-4 text-sm font-bold text-[#5A8A6C] shadow-md transition hover:bg-white/95"
               >
                 Apply Now
               </Link>
@@ -127,7 +130,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
-

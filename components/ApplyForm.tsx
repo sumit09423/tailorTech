@@ -5,14 +5,18 @@ import { useSearchParams } from "next/navigation";
 import { generateWhatsAppURL, formatMessage, validateEmail, validatePhone } from "@/lib/utils";
 import { WHATSAPP_NUMBER, COURSES } from "@/lib/constants";
 
+const inputClass = (hasError: boolean) =>
+  `w-full rounded-xl border-2 bg-white px-4 py-2.5 text-sm text-[#1E2A3A] placeholder:text-[#6B7C8F]/60 outline-none transition-colors focus:border-[#7BAE8E] ${
+    hasError ? "border-red-400" : "border-black/[0.08]"
+  }`;
+
 export default function ApplyForm() {
   const searchParams = useSearchParams();
   const courseFromUrl = searchParams.get("course") || "";
 
-  // Memoize live courses to prevent recreation on every render
-  const liveCourses = useMemo(() => COURSES.filter(c => c.category === "Live Program"), []);
-  const isValidCourse = courseFromUrl && liveCourses.some(c => c.title === courseFromUrl);
-  
+  const liveCourses = useMemo(() => COURSES.filter((c) => c.category === "Live Program"), []);
+  const isValidCourse = courseFromUrl && liveCourses.some((c) => c.title === courseFromUrl);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,11 +24,9 @@ export default function ApplyForm() {
     course: isValidCourse ? courseFromUrl : "",
   });
 
-  // Update course when URL parameter changes
   useEffect(() => {
-    if (courseFromUrl && liveCourses.some(c => c.title === courseFromUrl)) {
+    if (courseFromUrl && liveCourses.some((c) => c.title === courseFromUrl)) {
       setFormData((prev) => {
-        // Only update if course actually changed
         if (prev.course !== courseFromUrl) {
           return { ...prev, course: courseFromUrl };
         }
@@ -32,12 +34,11 @@ export default function ApplyForm() {
       });
     }
   }, [courseFromUrl, liveCourses]);
+
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
@@ -79,9 +80,9 @@ export default function ApplyForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="name" className="mb-1.5 block text-xs font-bold text-[#1E2A3A]">
           Name *
         </label>
         <input
@@ -90,16 +91,14 @@ export default function ApplyForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full px-4 py-2 bg-[#1a1a2e] border rounded-lg focus:ring-2 focus:ring-[#e91e63] focus:border-transparent text-white placeholder-gray-500 ${
-            errors.name ? "border-red-500" : "border-gray-600"
-          }`}
+          className={inputClass(!!errors.name)}
           placeholder="Your full name"
         />
-        {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
+        {errors.name && <p className="mt-1 text-sm text-[#E8845C]">{errors.name}</p>}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="email" className="mb-1.5 block text-xs font-bold text-[#1E2A3A]">
           Email *
         </label>
         <input
@@ -108,16 +107,14 @@ export default function ApplyForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full px-4 py-2 bg-[#1a1a2e] border rounded-lg focus:ring-2 focus:ring-[#e91e63] focus:border-transparent text-white placeholder-gray-500 ${
-            errors.email ? "border-red-500" : "border-gray-600"
-          }`}
+          className={inputClass(!!errors.email)}
           placeholder="your.email@example.com"
         />
-        {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
+        {errors.email && <p className="mt-1 text-sm text-[#E8845C]">{errors.email}</p>}
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="phone" className="mb-1.5 block text-xs font-bold text-[#1E2A3A]">
           Phone *
         </label>
         <input
@@ -126,16 +123,14 @@ export default function ApplyForm() {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          className={`w-full px-4 py-2 bg-[#1a1a2e] border rounded-lg focus:ring-2 focus:ring-[#e91e63] focus:border-transparent text-white placeholder-gray-500 ${
-            errors.phone ? "border-red-500" : "border-gray-600"
-          }`}
+          className={inputClass(!!errors.phone)}
           placeholder="+1 234 567 8900"
         />
-        {errors.phone && <p className="mt-1 text-sm text-red-400">{errors.phone}</p>}
+        {errors.phone && <p className="mt-1 text-sm text-[#E8845C]">{errors.phone}</p>}
       </div>
 
       <div>
-        <label htmlFor="course" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="course" className="mb-1.5 block text-xs font-bold text-[#1E2A3A]">
           Course Interested In *
         </label>
         <select
@@ -143,24 +138,22 @@ export default function ApplyForm() {
           name="course"
           value={formData.course}
           onChange={handleChange}
-          className={`w-full px-4 py-2 bg-[#1a1a2e] border rounded-lg focus:ring-2 focus:ring-[#e91e63] focus:border-transparent text-white ${
-            errors.course ? "border-red-500" : "border-gray-600"
-          }`}
+          className={inputClass(!!errors.course)}
         >
           <option value="">Select a course</option>
-          {COURSES.filter(c => c.category === "Live Program").map((course) => (
-            <option key={course.id} value={course.title} className="bg-[#1a1a2e]">
+          {COURSES.filter((c) => c.category === "Live Program").map((course) => (
+            <option key={course.id} value={course.title}>
               {course.title} ({course.duration})
             </option>
           ))}
         </select>
-        {errors.course && <p className="mt-1 text-sm text-red-400">{errors.course}</p>}
+        {errors.course && <p className="mt-1 text-sm text-[#E8845C]">{errors.course}</p>}
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full px-6 py-3 bg-[#e91e63] text-white rounded-lg font-semibold hover:bg-[#c2185b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full rounded-full bg-[#7BAE8E] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#5A8A6C] disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isSubmitting ? "Submitting..." : "Apply Now via WhatsApp"}
       </button>

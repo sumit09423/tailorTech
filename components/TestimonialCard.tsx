@@ -6,14 +6,12 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <div className="bg-[#1f1f3a] rounded-lg shadow-md p-6 border border-gray-700">
-      <div className="flex items-center gap-1 mb-4">
+    <div className="h-full rounded-[14px] border border-black/[0.03] bg-white p-6 shadow-sm">
+      <div className="mb-3 flex gap-0.5 text-[#D4A853]">
         {[...Array(5)].map((_, i) => (
           <svg
             key={i}
-            className={`w-5 h-5 ${
-              i < testimonial.rating ? "text-yellow-400" : "text-gray-600"
-            }`}
+            className={`h-4 w-4 ${i < testimonial.rating ? "opacity-100" : "opacity-25"}`}
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -21,10 +19,12 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           </svg>
         ))}
       </div>
-      <p className="text-gray-300 mb-4 italic">"{testimonial.testimonial}"</p>
-      <div className="border-t border-gray-700 pt-4">
-        <p className="font-semibold text-white">{testimonial.name}</p>
-        <p className="text-sm text-gray-400">{testimonial.course}</p>
+      <p className="mb-4 text-sm italic leading-relaxed text-[#2C3E50]">
+        &ldquo;{testimonial.testimonial}&rdquo;
+      </p>
+      <div className="border-t border-black/[0.04] pt-4">
+        <p className="font-semibold text-[#1E2A3A]">{testimonial.name}</p>
+        <p className="text-xs text-[#6B7C8F]">{testimonial.course}</p>
       </div>
     </div>
   );

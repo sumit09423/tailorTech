@@ -1,12 +1,16 @@
-# Vite + React (not Next.js). Publish the Vite build output.
+# Vite + React (not Next.js). Publish directory must be `dist`, not `.next`.
+#
+# If the Next.js Runtime is still enabled for this site, Netlify will fail the build.
+# Turn it off in the UI: Project configuration → Build & deploy → Build plugins →
+# open "Next.js" / "@netlify/plugin-nextjs" → Disable (or remove the integration).
+
 [build]
   command = "npm run build"
   publish = "dist"
 
-# Turn off Next.js plugin if it was added in the Netlify UI (this site is Vite).
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-  enabled = false
+# Hint for the Next runtime when it is still installed; disabling the plugin in the UI is required on v5+.
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 # Client-side routing: serve index.html for all paths
 [[redirects]]

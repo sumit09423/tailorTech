@@ -61,23 +61,13 @@ export function CourseDetail({ nav, cid, w, user, onEnroll }) {
     };
   };
 
-  const sidebarHeader = c.image
-    ? {
-        height: m ? 120 : 140,
-        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.5)), url(${c.image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }
-    : {
-        height: m ? 100 : 125,
-        background: c.banner,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      };
+  const sidebarHeader = {
+    height: m ? 100 : 125,
+    background: c.banner,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
 
   const perks = c.kind === "service" ? c.whatYouGet : ["Live or structured learning", "Hands-on projects", "Mentor support", "Interview preparation (where applicable)", "Small batch attention", "Industry-aligned roadmap"];
 
@@ -152,10 +142,10 @@ export function CourseDetail({ nav, cid, w, user, onEnroll }) {
                 </div>
                 {c.earlyBird && <div style={{ fontSize: ".72rem", color: "#5A8A6C", fontWeight: 600, marginBottom: ".35rem" }}>{c.earlyBird}</div>}
                 <div style={{ fontSize: ".72rem", color: "#6B7C8F", marginBottom: "1rem" }}>{c.kind === "service" ? "Book a one-on-one session via WhatsApp." : `Questions? ${SITE.whatsappDisplay}`}</div>
-                <button type="button" onClick={handlePrimary} style={{ width: "100%", padding: ".8rem", borderRadius: 50, fontSize: ".9rem", fontWeight: 700, border: "none", background: isEnrolled && c.kind !== "service" ? "#1E2A3A" : "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Mulish',sans-serif", marginBottom: ".4rem" }}>
+                <button type="button" onClick={handlePrimary} style={{ width: "100%", padding: ".8rem", borderRadius: 50, fontSize: ".9rem", fontWeight: 700, border: "none", background: isEnrolled && c.kind !== "service" ? "#1E2A3A" : "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Muli',sans-serif", marginBottom: ".4rem" }}>
                   {c.kind === "service" ? "Book a Slot →" : isEnrolled ? "Go to Dashboard →" : "Enroll / Save My Seat →"}
                 </button>
-                <button type="button" onClick={applyWhatsApp} style={{ width: "100%", padding: ".8rem", borderRadius: 50, fontSize: ".9rem", fontWeight: 700, border: "2px solid rgba(0,0,0,.06)", background: "transparent", color: "#1E2A3A", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                <button type="button" onClick={applyWhatsApp} style={{ width: "100%", padding: ".8rem", borderRadius: 50, fontSize: ".9rem", fontWeight: 700, border: "2px solid rgba(0,0,0,.06)", background: "transparent", color: "#1E2A3A", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                   Apply Now (WhatsApp)
                 </button>
                 {c.programDetails?.batchSize && <div style={{ fontSize: ".72rem", color: "#6B7C8F", marginTop: ".75rem" }}>{c.programDetails.batchSize}</div>}
@@ -183,7 +173,7 @@ export function CourseDetail({ nav, cid, w, user, onEnroll }) {
                 ["schedule", "Schedule"],
                 ["faq", "FAQ"],
               ].map(([k, l]) => (
-                <button key={k} type="button" onClick={() => sTab(k)} style={{ padding: m ? ".5rem .75rem" : ".6rem 1rem", fontSize: m ? ".76rem" : ".82rem", fontWeight: 700, color: tab === k ? "#5A8A6C" : "#6B7C8F", background: "none", border: "none", borderBottom: tab === k ? "2.5px solid #7BAE8E" : "2.5px solid transparent", marginBottom: -2, whiteSpace: "nowrap", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                <button key={k} type="button" onClick={() => sTab(k)} style={{ padding: m ? ".5rem .75rem" : ".6rem 1rem", fontSize: m ? ".76rem" : ".82rem", fontWeight: 700, color: tab === k ? "#5A8A6C" : "#6B7C8F", background: "none", border: "none", borderBottom: tab === k ? "2.5px solid #7BAE8E" : "2.5px solid transparent", marginBottom: -2, whiteSpace: "nowrap", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                   {l}
                 </button>
               ))}
@@ -259,7 +249,7 @@ export function CourseDetail({ nav, cid, w, user, onEnroll }) {
                       <div style={{ fontSize: ".74rem", color: "#6B7C8F", marginBottom: ".35rem" }}>{b.mode}</div>
                       <span style={{ display: "inline-block", fontSize: ".65rem", fontWeight: 700, padding: ".18rem .5rem", borderRadius: 50, marginTop: ".2rem", background: b.status === "few" ? "#FFF0EA" : "#E8F3EC", color: b.status === "few" ? "#E8845C" : "#5A8A6C" }}>{b.seats != null ? `${b.seats} seats` : "Open"}</span>
                       {b.courseId && (
-                        <button type="button" onClick={() => nav("detail", b.courseId)} style={{ display: "block", marginTop: ".6rem", background: "none", border: "none", color: "#7BAE8E", fontWeight: 700, fontSize: ".78rem", cursor: "pointer", padding: 0, fontFamily: "'Mulish',sans-serif" }}>
+                        <button type="button" onClick={() => nav("detail", b.courseId)} style={{ display: "block", marginTop: ".6rem", background: "none", border: "none", color: "#7BAE8E", fontWeight: 700, fontSize: ".78rem", cursor: "pointer", padding: 0, fontFamily: "'Muli',sans-serif" }}>
                           View program →
                         </button>
                       )}

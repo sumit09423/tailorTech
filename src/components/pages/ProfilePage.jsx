@@ -20,7 +20,7 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
   const enrolledCourses = COURSES.filter((c) => (user.enrolled || []).includes(c.id));
 
   const tabBtn = (k, l, ic) => (
-    <button key={k} type="button" onClick={() => setTab(k)} style={{ display: "flex", alignItems: "center", gap: ".5rem", padding: ".7rem 1.1rem", borderRadius: 12, fontSize: ".85rem", fontWeight: tab === k ? 700 : 500, background: tab === k ? "#E8F3EC" : "transparent", color: tab === k ? "#5A8A6C" : "#6B7C8F", border: "none", cursor: "pointer", width: "100%", textAlign: "left", transition: "all .2s", fontFamily: "'Mulish',sans-serif" }}>
+    <button key={k} type="button" onClick={() => setTab(k)} style={{ display: "flex", alignItems: "center", gap: ".5rem", padding: ".7rem 1.1rem", borderRadius: 12, fontSize: ".85rem", fontWeight: tab === k ? 700 : 500, background: tab === k ? "#E8F3EC" : "transparent", color: tab === k ? "#5A8A6C" : "#6B7C8F", border: "none", cursor: "pointer", width: "100%", textAlign: "left", transition: "all .2s", fontFamily: "'Muli',sans-serif" }}>
       <span style={{ fontSize: "1rem" }}>{ic}</span>
       {l}
     </button>
@@ -49,7 +49,7 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
                 <span>📚 {enrolledCourses.length} courses</span>
               </div>
             </div>
-            <button type="button" onClick={() => onLogout()} style={{ padding: ".55rem 1.3rem", borderRadius: 50, fontSize: ".82rem", fontWeight: 700, border: "2px solid rgba(232,92,92,.2)", background: "transparent", color: "#E85C5C", cursor: "pointer", fontFamily: "'Mulish',sans-serif", whiteSpace: "nowrap" }}>
+            <button type="button" onClick={() => onLogout()} style={{ padding: ".55rem 1.3rem", borderRadius: 50, fontSize: ".82rem", fontWeight: 700, border: "2px solid rgba(232,92,92,.2)", background: "transparent", color: "#E85C5C", cursor: "pointer", fontFamily: "'Muli',sans-serif", whiteSpace: "nowrap" }}>
               Logout
             </button>
           </div>
@@ -72,11 +72,11 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
                   <h2 style={{ fontFamily: "'DM Serif Display',serif", fontSize: "1.3rem", color: "#1E2A3A" }}>Personal Information</h2>
                   {!editing ? (
-                    <button type="button" onClick={() => setEditing(true)} style={{ padding: ".45rem 1.1rem", borderRadius: 50, fontSize: ".8rem", fontWeight: 700, border: "2px solid rgba(0,0,0,.08)", background: "#fff", color: "#1E2A3A", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                    <button type="button" onClick={() => setEditing(true)} style={{ padding: ".45rem 1.1rem", borderRadius: 50, fontSize: ".8rem", fontWeight: 700, border: "2px solid rgba(0,0,0,.08)", background: "#fff", color: "#1E2A3A", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                       ✏️ Edit
                     </button>
                   ) : (
-                    <button type="button" onClick={save} style={{ padding: ".45rem 1.1rem", borderRadius: 50, fontSize: ".8rem", fontWeight: 700, border: "none", background: "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                    <button type="button" onClick={save} style={{ padding: ".45rem 1.1rem", borderRadius: 50, fontSize: ".8rem", fontWeight: 700, border: "none", background: "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                       Save Changes
                     </button>
                   )}
@@ -119,7 +119,7 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
                     <div style={{ fontSize: "3rem", marginBottom: ".8rem" }}>📭</div>
                     <h3 style={{ fontFamily: "'DM Serif Display',serif", fontSize: "1.2rem", color: "#1E2A3A", marginBottom: ".3rem" }}>No Courses Yet</h3>
                     <p style={{ fontSize: ".88rem", color: "#6B7C8F", marginBottom: "1.2rem" }}>You haven&apos;t enrolled in any courses yet. Start exploring!</p>
-                    <button type="button" onClick={() => nav("courses")} style={{ background: "#7BAE8E", color: "#fff", padding: ".75rem 1.6rem", borderRadius: 50, fontSize: ".88rem", fontWeight: 700, border: "none", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                    <button type="button" onClick={() => nav("courses")} style={{ background: "#7BAE8E", color: "#fff", padding: ".75rem 1.6rem", borderRadius: 50, fontSize: ".88rem", fontWeight: 700, border: "none", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                       Browse Courses
                     </button>
                   </div>
@@ -131,9 +131,7 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
                         style={{
                           width: m ? "100%" : 180,
                           minHeight: m ? 100 : 120,
-                          background: c.image ? `linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.45)), url(${c.image})` : c.banner,
-                          backgroundSize: c.image ? "cover" : undefined,
-                          backgroundPosition: c.image ? "center" : undefined,
+                          background: c.banner,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -169,7 +167,7 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
                           </div>
                         </div>
                         <div style={{ display: "flex", gap: ".5rem", flexWrap: "wrap" }}>
-                          <button type="button" onClick={() => nav("detail", c.id)} style={{ padding: ".4rem 1rem", borderRadius: 50, fontSize: ".78rem", fontWeight: 700, border: "none", background: "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                          <button type="button" onClick={() => nav("detail", c.id)} style={{ padding: ".4rem 1rem", borderRadius: 50, fontSize: ".78rem", fontWeight: 700, border: "none", background: "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                             Continue Learning
                           </button>
                           <button
@@ -179,7 +177,7 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
                               setToast(`Unenrolled from ${c.title}`);
                               setTimeout(() => setToast(""), 2500);
                             }}
-                            style={{ padding: ".4rem 1rem", borderRadius: 50, fontSize: ".78rem", fontWeight: 600, border: "2px solid rgba(0,0,0,.08)", background: "#fff", color: "#6B7C8F", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}
+                            style={{ padding: ".4rem 1rem", borderRadius: 50, fontSize: ".78rem", fontWeight: 600, border: "2px solid rgba(0,0,0,.08)", background: "#fff", color: "#6B7C8F", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}
                           >
                             Unenroll
                           </button>
@@ -206,10 +204,10 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
                 <div style={{ background: "#fff", borderRadius: 18, padding: m ? "1.3rem" : "1.8rem", border: "1px solid rgba(0,0,0,.04)" }}>
                   <h2 style={{ fontFamily: "'DM Serif Display',serif", fontSize: "1.2rem", color: "#1E2A3A", marginBottom: "1rem" }}>Account</h2>
                   <div style={{ display: "flex", gap: ".6rem", flexWrap: "wrap" }}>
-                    <button type="button" style={{ padding: ".6rem 1.3rem", borderRadius: 50, fontSize: ".85rem", fontWeight: 700, border: "2px solid rgba(0,0,0,.08)", background: "#fff", color: "#1E2A3A", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                    <button type="button" style={{ padding: ".6rem 1.3rem", borderRadius: 50, fontSize: ".85rem", fontWeight: 700, border: "2px solid rgba(0,0,0,.08)", background: "#fff", color: "#1E2A3A", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                       Change Password
                     </button>
-                    <button type="button" onClick={onLogout} style={{ padding: ".6rem 1.3rem", borderRadius: 50, fontSize: ".85rem", fontWeight: 700, border: "2px solid rgba(232,92,92,.15)", background: "transparent", color: "#E85C5C", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                    <button type="button" onClick={onLogout} style={{ padding: ".6rem 1.3rem", borderRadius: 50, fontSize: ".85rem", fontWeight: 700, border: "2px solid rgba(232,92,92,.15)", background: "transparent", color: "#E85C5C", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                       Delete Account
                     </button>
                   </div>

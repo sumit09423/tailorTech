@@ -15,28 +15,15 @@ function formatPrice(c) {
 export function CourseCard({ c, nav, delay = 0 }) {
   const [h, setH] = useState(false);
   const { main, sub } = formatPrice(c);
-  const headerStyle = c.image
-    ? {
-        height: 160,
-        padding: "1rem",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        position: "relative",
-        backgroundColor: "#1a1e2e",
-        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 100%), url(${c.image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }
-    : {
-        height: 160,
-        padding: "1rem",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        background: c.banner,
-        position: "relative",
-      };
+  const headerStyle = {
+    height: 160,
+    padding: "1rem",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    background: c.banner,
+    position: "relative",
+  };
 
   return (
     <Reveal delay={delay} style={{ height: "100%" }}>
@@ -68,8 +55,8 @@ export function CourseCard({ c, nav, delay = 0 }) {
       >
         <div style={headerStyle}>
           <span style={{ alignSelf: "flex-start", background: "rgba(255,255,255,.22)", backdropFilter: "blur(8px)", color: "#fff", fontSize: ".63rem", fontWeight: 700, padding: ".22rem .55rem", borderRadius: 50, textTransform: "uppercase", letterSpacing: 0.7, zIndex: 2 }}>{c.badge}</span>
-          <span style={{ fontSize: c.image ? "1.6rem" : "2.2rem", alignSelf: "flex-end", zIndex: 2, filter: "drop-shadow(0 2px 4px rgba(0,0,0,.25))" }}>{c.emoji}</span>
-          {!c.image && <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,transparent 45%,rgba(0,0,0,.12) 100%)" }} />}
+          <span style={{ fontSize: "2.2rem", alignSelf: "flex-end", zIndex: 2, filter: "drop-shadow(0 2px 4px rgba(0,0,0,.25))" }}>{c.emoji}</span>
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,transparent 45%,rgba(0,0,0,.12) 100%)" }} />
         </div>
         <div style={{ padding: "1.1rem", flex: 1, display: "flex", flexDirection: "column" }}>
           <h3 style={{ fontFamily: "'DM Serif Display',serif", fontSize: ".98rem", color: "#1E2A3A", marginBottom: ".2rem" }}>{c.title}</h3>

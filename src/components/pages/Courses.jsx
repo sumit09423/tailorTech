@@ -29,7 +29,7 @@ export function Courses({ nav, w }) {
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: ".5rem", flexWrap: "wrap" }}>
           <div style={{ display: "flex", gap: m ? ".2rem" : ".35rem", flexWrap: "wrap" }}>
             {FILTERS.map((fi) => (
-              <button key={fi.key} type="button" onClick={() => sF(fi.key)} style={{ padding: m ? ".3rem .55rem" : ".4rem .9rem", borderRadius: 50, fontSize: m ? ".65rem" : ".74rem", fontWeight: 700, border: f === fi.key ? "2px solid #7BAE8E" : "2px solid rgba(0,0,0,.05)", background: f === fi.key ? "#7BAE8E" : "#fff", color: f === fi.key ? "#fff" : "#6B7C8F", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+              <button key={fi.key} type="button" onClick={() => sF(fi.key)} style={{ padding: m ? ".3rem .55rem" : ".4rem .9rem", borderRadius: 50, fontSize: m ? ".65rem" : ".74rem", fontWeight: 700, border: f === fi.key ? "2px solid #7BAE8E" : "2px solid rgba(0,0,0,.05)", background: f === fi.key ? "#7BAE8E" : "#fff", color: f === fi.key ? "#fff" : "#6B7C8F", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                 {fi.label}
               </button>
             ))}

@@ -36,7 +36,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ fontFamily: "'Mulish',sans-serif", color: "#2C3E50", background: "#FFFDFB", minHeight: "100vh" }}>
+    <div style={{ fontFamily: "'Muli',sans-serif", color: "#2C3E50", background: "#FFFDFB", minHeight: "100vh" }}>
       <Nav key={pg} page={pg} nav={nav} w={w} user={user} onLogout={handleLogout} />
       {pg === "home" && <Home nav={nav} w={w} user={user} />}
       {pg === "courses" && <Courses nav={nav} w={w} />}

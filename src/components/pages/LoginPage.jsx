@@ -43,7 +43,7 @@ export function LoginPage({ nav, w, onLogin }) {
                 ["login", "Sign In"],
                 ["register", "Sign Up"],
               ].map(([k, l]) => (
-                <button key={k} type="button" onClick={() => { setMode(k); setError(""); }} style={{ flex: 1, padding: ".65rem", borderRadius: 10, fontSize: ".85rem", fontWeight: 700, border: "none", cursor: "pointer", background: mode === k ? "#fff" : "transparent", color: mode === k ? "#1E2A3A" : "#6B7C8F", boxShadow: mode === k ? "0 2px 8px rgba(0,0,0,.06)" : "none", transition: "all .3s", fontFamily: "'Mulish',sans-serif" }}>
+                <button key={k} type="button" onClick={() => { setMode(k); setError(""); }} style={{ flex: 1, padding: ".65rem", borderRadius: 10, fontSize: ".85rem", fontWeight: 700, border: "none", cursor: "pointer", background: mode === k ? "#fff" : "transparent", color: mode === k ? "#1E2A3A" : "#6B7C8F", boxShadow: mode === k ? "0 2px 8px rgba(0,0,0,.06)" : "none", transition: "all .3s", fontFamily: "'Muli',sans-serif" }}>
                   {l}
                 </button>
               ))}
@@ -74,7 +74,7 @@ export function LoginPage({ nav, w, onLogin }) {
                 <a style={{ fontSize: ".8rem", color: "#7BAE8E", fontWeight: 600, cursor: "pointer" }}>Forgot password?</a>
               </div>
             )}
-            <button type="button" onClick={submit} style={{ width: "100%", padding: ".9rem", borderRadius: 50, fontSize: ".95rem", fontWeight: 700, border: "none", background: "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Mulish',sans-serif", marginBottom: ".8rem" }}>
+            <button type="button" onClick={submit} style={{ width: "100%", padding: ".9rem", borderRadius: 50, fontSize: ".95rem", fontWeight: 700, border: "none", background: "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Muli',sans-serif", marginBottom: ".8rem" }}>
               {mode === "login" ? "Sign In" : "Create Account"}
             </button>
             <div style={{ textAlign: "center", fontSize: ".85rem", color: "#6B7C8F" }}>

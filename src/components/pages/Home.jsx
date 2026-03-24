@@ -160,7 +160,7 @@ export function Home({ nav, w, user }) {
                 <p style={{ fontSize: ".82rem", color: "#6B7C8F", marginBottom: ".6rem" }}>
                   Seats available: <strong style={{ color: "#1E2A3A" }}>{b.seats}</strong>
                 </p>
-                <button type="button" onClick={() => window.open(whatsappLink(`Hi, I want to apply for ${b.label} (batch ${b.start}).`), "_blank", "noopener,noreferrer")} style={{ background: "#7BAE8E", color: "#fff", border: "none", padding: ".55rem 1.2rem", borderRadius: 50, fontWeight: 700, fontSize: ".82rem", cursor: "pointer", fontFamily: "'Mulish',sans-serif" }}>
+                <button type="button" onClick={() => window.open(whatsappLink(`Hi, I want to apply for ${b.label} (batch ${b.start}).`), "_blank", "noopener,noreferrer")} style={{ background: "#7BAE8E", color: "#fff", border: "none", padding: ".55rem 1.2rem", borderRadius: 50, fontWeight: 700, fontSize: ".82rem", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                   Apply Now
                 </button>
               </div>

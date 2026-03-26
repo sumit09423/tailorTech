@@ -1,20 +1,8 @@
 import { useState } from "react";
 import { Reveal } from "../ui/Reveal.jsx";
 
-function formatPrice(c) {
-  if (c.price === "—" || c.price === "") {
-    return { main: c.priceLabel || "Contact", sub: null };
-  }
-  const sym = c.currency === "USD" ? "$" : c.currency === "INR" ? "₹" : "";
-  return {
-    main: `${sym}${c.price}`,
-    sub: c.original && c.original !== c.price ? `${sym}${c.original}` : null,
-  };
-}
-
 export function CourseCard({ c, nav, delay = 0 }) {
   const [h, setH] = useState(false);
-  const { main, sub } = formatPrice(c);
   const headerStyle = {
     height: 160,
     padding: "1rem",
@@ -71,13 +59,9 @@ export function CourseCard({ c, nav, delay = 0 }) {
           <div style={{ display: "flex", gap: ".55rem", marginBottom: ".7rem", fontSize: ".7rem", color: "#6B7C8F", flexWrap: "wrap" }}>
             <span>🕐 {c.duration}</span>
             <span>📍 {c.mode}</span>
-            <span>⭐ {c.rating}</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: ".55rem", borderTop: "1px solid rgba(0,0,0,.04)" }}>
-            <div>
-              <span style={{ fontFamily: "'DM Serif Display',serif", fontSize: "1.05rem", color: "#1E2A3A" }}>{main}</span>
-              {sub && <span style={{ fontSize: ".72rem", color: "#6B7C8F", textDecoration: "line-through", marginLeft: ".2rem" }}>{sub}</span>}
-            </div>
+            <div />
             <span style={{ background: "#E8F3EC", color: "#5A8A6C", padding: ".32rem .8rem", borderRadius: 50, fontSize: ".7rem", fontWeight: 700 }}>{c.kind === "service" ? "Book" : "Details"}</span>
           </div>
         </div>

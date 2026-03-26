@@ -8,7 +8,7 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
   const t = w < 1024;
   const [tab, setTab] = useState("profile");
   const [editing, setEditing] = useState(false);
-  const [form, setForm] = useState({ name: user.name, email: user.email, phone: user.phone, bio: user.bio || "", city: user.city || "" });
+  const [form, setForm] = useState({ name: user.name, email: user.email, phone: user.phone, bio: user.bio || "" });
   const [toast, setToast] = useState("");
   const upd = (k) => (e) => setForm({ ...form, [k]: e.target.value });
   const save = () => {
@@ -44,7 +44,6 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
               <h1 style={{ fontFamily: "'DM Serif Display',serif", fontSize: m ? "1.4rem" : "1.8rem", color: "#1E2A3A", marginBottom: ".15rem" }}>{user.name}</h1>
               <p style={{ fontSize: ".88rem", color: "#6B7C8F", marginBottom: ".3rem" }}>{user.email}</p>
               <div style={{ display: "flex", gap: ".8rem", justifyContent: m ? "center" : "flex-start", fontSize: ".78rem", color: "#6B7C8F" }}>
-                <span>📍 {user.city || "Jodhpur"}</span>
                 <span>📅 Joined {user.joinDate || "Mar 2026"}</span>
                 <span>📚 {enrolledCourses.length} courses</span>
               </div>
@@ -93,10 +92,6 @@ export function ProfilePage({ nav, w, user, setUser, onLogout, onUnenroll }) {
                   <div>
                     <label className="tt-label">Phone</label>
                     {editing ? <input className="tt-input" value={form.phone} onChange={upd("phone")} /> : <p style={{ fontSize: ".92rem", color: "#2C3E50", padding: ".6rem 0" }}>{user.phone || "Not set"}</p>}
-                  </div>
-                  <div>
-                    <label className="tt-label">City</label>
-                    {editing ? <input className="tt-input" value={form.city} onChange={upd("city")} /> : <p style={{ fontSize: ".92rem", color: "#2C3E50", padding: ".6rem 0" }}>{user.city || "Not set"}</p>}
                   </div>
                   <div style={{ gridColumn: m ? "1" : "1/3" }}>
                     <label className="tt-label">Bio</label>

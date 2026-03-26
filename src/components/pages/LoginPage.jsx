@@ -17,7 +17,6 @@ export function LoginPage({ nav, w, onLogin }) {
       email: form.email,
       phone: form.phone || "+91 98765 43210",
       bio: "",
-      city: "Jodhpur",
       enrolled: mode === "register" ? [] : ["java-fullstack", "java-frontend"],
       joinDate: "March 2026",
     });

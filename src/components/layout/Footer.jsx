@@ -18,6 +18,13 @@ function FootLink({ children, onClick }) {
 export function Footer({ nav, w }) {
   const m = w < 640;
   const t = w < 1024;
+  const socials = [
+    { label: "YouTube", icon: "▶", href: "https://www.youtube.com" },
+    { label: "WhatsApp", icon: "🟢", href: "https://wa.me/917340445010" },
+    { label: "LinkedIn", icon: "in", href: "https://www.linkedin.com/company/tailortechh" },
+    { label: "Facebook", icon: "f", href: "https://www.facebook.com" },
+    { label: "Instagram", icon: "◉", href: "https://www.instagram.com/tailortech.in" },
+  ];
   return (
     <footer style={{ background: "#1E2A3A", color: "#fff", padding: m ? "2rem 5% 1.2rem" : "3rem 6% 1.2rem" }}>
       <div
@@ -102,8 +109,34 @@ export function Footer({ nav, w }) {
           color: "rgba(255,255,255,.22)",
         }}
       >
-        <span>© 2026 TailorTech</span>
-        <span>Made with ❤️ in Jodhpur</span>
+        <span>© 2026 TailorTech. All rights reserved.</span>
+        <div style={{ display: "flex", alignItems: "center", gap: ".5rem", flexWrap: "wrap" }}>
+          <span>Follow us:</span>
+          {socials.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={social.label}
+              style={{
+                width: 24,
+                height: 24,
+                borderRadius: "50%",
+                border: "1px solid rgba(255,255,255,.2)",
+                color: "rgba(255,255,255,.75)",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: ".62rem",
+                fontWeight: 700,
+                textDecoration: "none",
+              }}
+            >
+              {social.icon}
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );

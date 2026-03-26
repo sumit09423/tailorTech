@@ -3,14 +3,7 @@ import { COURSES, CURRICULUM_BY_COURSE, BATCHES, FAQS, whatsappLink, SITE } from
 import { Toast } from "../ui/Toast.jsx";
 import { CtaSection } from "../layout/CtaSection.jsx";
 
-function parsePrice(c) {
-  const p = parseInt(String(c.price).replace(/,/g, ""), 10);
-  const o = parseInt(String(c.original).replace(/,/g, ""), 10);
-  if (!Number.isFinite(p) || !Number.isFinite(o) || o <= 0 || p >= o) return null;
-  return Math.round((1 - p / o) * 100);
-}
-
-export function CourseDetail({ nav, cid, w, user, onEnroll }) {
+export function CourseDetail({ nav, cid, w }) {
   const c = COURSES.find((x) => x.id === cid) || COURSES[0];
   const curriculum = CURRICULUM_BY_COURSE[cid] || CURRICULUM_BY_COURSE[c.id] || [];
   const m = w < 640;
@@ -18,29 +11,15 @@ export function CourseDetail({ nav, cid, w, user, onEnroll }) {
   const [tab, sTab] = useState("program");
   const [oM, sOM] = useState([0]);
   const [oF, sOF] = useState([]);
-  const [toast, setToast] = useState("");
+  const [toast] = useState("");
   const tM = (i) => sOM((p) => (p.includes(i) ? p.filter((x) => x !== i) : [...p, i]));
   const tF = (i) => sOF((p) => (p.includes(i) ? p.filter((x) => x !== i) : [...p, i]));
-  const disc = parsePrice(c);
-  const isEnrolled = user && (user.enrolled || []).includes(c.id);
-  const sym = c.currency === "USD" ? "$" : "";
-
   const handlePrimary = () => {
     if (c.kind === "service") {
       window.open(whatsappLink(`Hi, I'd like to book a Mock Interview session with TailorTech.`), "_blank", "noopener,noreferrer");
       return;
     }
-    if (!user) {
-      nav("login");
-      return;
-    }
-    if (isEnrolled) {
-      nav("profile");
-      return;
-    }
-    onEnroll(c.id);
-    setToast(`You're enrolled in ${c.title}!`);
-    setTimeout(() => setToast(""), 2500);
+    nav("login");
   };
 
   const applyWhatsApp = () => {
@@ -104,16 +83,11 @@ export function CourseDetail({ nav, cid, w, user, onEnroll }) {
                 {[
                   ["🕐", c.duration],
                   ["📍", c.mode],
-                  ["⭐", `${c.rating} rating`],
                 ].map(([ic, l]) => (
                   <span key={l} style={{ display: "flex", alignItems: "center", gap: ".2rem", fontSize: m ? ".74rem" : ".82rem", color: "#2C3E50" }}>
                     {ic} {l}
                   </span>
                 ))}
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: ".3rem" }}>
-                <span style={{ color: "#D4A853", fontSize: ".82rem", letterSpacing: 1 }}>★★★★★</span>
-                <span style={{ fontSize: ".78rem", color: "#6B7C8F" }}>{c.rating}/5</span>
               </div>
             </div>
             <div style={{ background: "#fff", borderRadius: 15, overflow: "hidden", boxShadow: "0 7px 25px rgba(0,0,0,.05)", border: "1px solid rgba(0,0,0,.04)", position: t ? "static" : "sticky", top: 70, order: t ? -1 : 0 }}>
@@ -121,29 +95,9 @@ export function CourseDetail({ nav, cid, w, user, onEnroll }) {
                 <span style={{ fontSize: m ? "2.5rem" : "3rem", filter: "drop-shadow(0 2px 6px rgba(0,0,0,.25))" }}>{c.emoji}</span>
               </div>
               <div style={{ padding: m ? "1.1rem" : "1.3rem" }}>
-                <div style={{ display: "flex", alignItems: "baseline", gap: ".35rem", flexWrap: "wrap", marginBottom: ".1rem" }}>
-                  {c.price === "—" || c.price === "" ? (
-                    <span style={{ fontFamily: "'DM Serif Display',serif", fontSize: m ? "1.2rem" : "1.35rem", color: "#1E2A3A" }}>{c.priceLabel}</span>
-                  ) : (
-                    <>
-                      <span style={{ fontFamily: "'DM Serif Display',serif", fontSize: m ? "1.5rem" : "1.7rem", color: "#1E2A3A" }}>
-                        {sym}
-                        {c.price}
-                      </span>
-                      {c.original && c.original !== c.price && (
-                        <span style={{ fontSize: ".82rem", color: "#6B7C8F", textDecoration: "line-through" }}>
-                          {sym}
-                          {c.original}
-                        </span>
-                      )}
-                      {disc != null && <span style={{ fontSize: ".65rem", fontWeight: 700, color: "#fff", background: "#E8845C", padding: ".12rem .4rem", borderRadius: 50 }}>{disc}% OFF</span>}
-                    </>
-                  )}
-                </div>
-                {c.earlyBird && <div style={{ fontSize: ".72rem", color: "#5A8A6C", fontWeight: 600, marginBottom: ".35rem" }}>{c.earlyBird}</div>}
                 <div style={{ fontSize: ".72rem", color: "#6B7C8F", marginBottom: "1rem" }}>{c.kind === "service" ? "Book a one-on-one session via WhatsApp." : `Questions? ${SITE.whatsappDisplay}`}</div>
-                <button type="button" onClick={handlePrimary} style={{ width: "100%", padding: ".8rem", borderRadius: 50, fontSize: ".9rem", fontWeight: 700, border: "none", background: isEnrolled && c.kind !== "service" ? "#1E2A3A" : "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Muli',sans-serif", marginBottom: ".4rem" }}>
-                  {c.kind === "service" ? "Book a Slot →" : isEnrolled ? "Go to Dashboard →" : "Enroll / Save My Seat →"}
+                <button type="button" onClick={handlePrimary} style={{ width: "100%", padding: ".8rem", borderRadius: 50, fontSize: ".9rem", fontWeight: 700, border: "none", background: "#7BAE8E", color: "#fff", cursor: "pointer", fontFamily: "'Muli',sans-serif", marginBottom: ".4rem" }}>
+                  {c.kind === "service" ? "Book a Slot →" : "Download Brochure →"}
                 </button>
                 <button type="button" onClick={applyWhatsApp} style={{ width: "100%", padding: ".8rem", borderRadius: 50, fontSize: ".9rem", fontWeight: 700, border: "2px solid rgba(0,0,0,.06)", background: "transparent", color: "#1E2A3A", cursor: "pointer", fontFamily: "'Muli',sans-serif" }}>
                   Apply Now (WhatsApp)

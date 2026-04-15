@@ -76,6 +76,7 @@ export function Footer({ nav, w }) {
         <div>
           <h4 style={{ fontSize: ".72rem", textTransform: "uppercase", letterSpacing: 1.5, color: "#7BAE8E", marginBottom: ".6rem" }}>Programs</h4>
           <FootLink onClick={() => nav("courses")}>Java Full Stack</FootLink>
+          <FootLink onClick={() => nav("detail", "data-backend-foundations")}>Data & Backend Foundations</FootLink>
           <FootLink onClick={() => nav("courses")}>Data Engineering</FootLink>
           <FootLink onClick={() => nav("courses")}>Frontend & Backend</FootLink>
           <FootLink onClick={() => nav("courses")}>Mock Interviews</FootLink>
